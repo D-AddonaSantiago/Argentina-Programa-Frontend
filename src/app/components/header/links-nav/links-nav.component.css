@@ -1,0 +1,22 @@
+.btn-container{
+  margin-right: 10px;
+}
+
+.btn-group{
+  margin: 0 5px;
+}
+
+.btnAdd{
+  margin-right: 10px;
+}
+
+.modal-body{
+  display: block;
+  width: auto;
+  min-width: 200px;
+}
+
+.form-group{
+  width: auto;
+}
+

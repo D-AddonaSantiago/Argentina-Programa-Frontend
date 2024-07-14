@@ -1,0 +1,73 @@
+.project-list {
+  display: block;
+  flex-wrap: wrap;
+}
+
+.project-item {
+  flex: 1 1 25%;
+  margin: 0 1em 1em 0;
+  position: relative;
+}
+
+.project-info {
+  padding: 1em;
+}
+
+.project-images {
+  display: flex;
+  padding-top: 20px;
+}
+
+.project-images img {
+  max-width: 400px;
+  margin: auto;
+}
+
+.img-thumbnail {
+  display: flex;
+}
+
+.btn {
+margin-left: 10px;
+}
+
+.btn-primary{
+  margin-left: 30px;
+}
+
+.titulo {
+  display: block;
+}
+
+.descripcion {
+  display: block;
+}
+
+.descripcion{
+  width: 760px;
+  height: 150px;
+  background-color: transparent;
+  text-align: left;
+  border: 1px ;
+  border-radius: 5px;
+  resize: none;
+}
+
+.project-images {
+  display: flex;
+  padding-top: 20px;
+}
+
+.image-item {
+  display: block;
+  margin: auto;
+}
+
+.image-item img {
+  max-width: 400px;
+  margin: auto;
+}
+
+.img-thumbnail {
+  display: flex;
+}

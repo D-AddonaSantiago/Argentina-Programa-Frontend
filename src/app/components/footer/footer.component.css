@@ -1,0 +1,46 @@
+footer {
+  background-color: #464646;
+  color: #f0f0f0;
+  padding: 40px 0;
+  margin-top: 20px;
+}
+
+footer h4 {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+footer li {
+  margin-bottom: 10px;
+}
+
+footer i {
+  margin-right: 10px;
+}
+
+footer hr {
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+}
+
+footer p {
+  margin: 0;
+}
+
+.infoFooter {
+  justify-content: space-evenly;
+  display: flex;
+}
+
+.navegacion a{
+  color: rgb(39, 255, 183);
+}
+
+

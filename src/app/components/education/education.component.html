@@ -1,0 +1,49 @@
+<div class="bigDiv">
+  <h1>Education</h1>
+  <div>
+
+    <div *ngFor="let edu of eduList" class="mainContainer">
+      <div>
+
+
+        <div class="container">
+
+          <div class="eduContainer">
+            <img src="{{ edu.img }}" alt="Profile_Img">
+          </div>
+
+          <div class="meContainer">
+            <div *ngIf="editingElem !== edu.id">
+              <h2> {{ edu.titulo}} </h2>
+              <p>{{ edu.descripcion }}</p>
+              <button class="btn btn-primary" (click)="editingElem = edu.id; tempEdu = edu" *ngIf="isLogged">Edit</button>
+              <button type="button" class="btn btn-danger" (click)="eliminarEduMe(edu)" *ngIf="isLogged">x</button>
+            </div>
+            <div class="meModifier" *ngIf="editingElem === edu.id">
+              <input [(ngModel)]="tempEdu.titulo">
+              <div class="textArea">
+                <textarea [(ngModel)]="tempEdu.descripcion"></textarea>
+              </div>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon3" >URL Imagen</span>
+                </div>
+                <input type="text" [(ngModel)]="tempEdu.img" class="form-control" id="img" aria-describedby="basic-addon3">
+              </div>
+              <button class="btn btn-success" (click)="editarEduMe(); editingElem = -1">Save</button>
+              <button class="btn btn-danger" (click)="editingElem = -1">Cancel</button>
+            </div>
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-success agregarLink" (click)="agregarEducacion()" *ngIf="isLogged">
+    Add
+  </button>
+
+</div>

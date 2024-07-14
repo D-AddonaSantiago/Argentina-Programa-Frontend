@@ -1,0 +1,36 @@
+<div class="skill-list">
+  <h1>Skills</h1>
+  <div class="skill-item" *ngFor="let skill of skills">
+
+    <div class="ifTrue" *ngIf="editingSkill !== skill.id">
+      <div class="skill-info" >
+        <div class="skill-name">{{ skill.nombre }}</div>
+        <div class="skill-level">
+          <div class="skill-level-bar" [style.width.%]="skill.valor"></div>
+          <div class="skill-level-percent">{{ skill.valor }}%</div>
+        </div>
+      </div>
+      <button class="btn btn-primary editButton" *ngIf="isLogged" (click)="editingSkill = skill.id; tempSkill = skill">Edit</button>
+      <button class="btn btn-danger editButton" *ngIf="isLogged" (click)="eliminarSkill(skill)">X</button>
+    </div>
+
+    <div class="ifFalse" *ngIf="editingSkill === skill.id">
+      <div class="skill-info">
+        <input type="text" [(ngModel)]="tempSkill.nombre">
+        <input type="number" [(ngModel)]="tempSkill.valor" min="0" max="100">
+        <div class="skill-level">
+          <div class="skill-level-bar" [style.width.%]="tempSkill.valor"></div>
+          <div class="skill-level-percent">{{ tempSkill.valor }}%</div>
+        </div>
+      </div>
+      <button class="btn btn-success" (click)="guardarSkill(tempSkill); editingSkill = -1">Save</button>
+      <button class="btn btn-danger" (click)="editingSkill = -1">Cancel</button>
+    </div>
+
+  </div>
+
+  <button class="btn btn-success addbutton" (click)="agregarSkill()" *ngIf="isLogged">Add New Skill</button>
+
+</div>
+
+

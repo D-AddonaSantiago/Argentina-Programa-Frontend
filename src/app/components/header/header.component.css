@@ -1,0 +1,19 @@
+.navbar li{
+  background-color: green;
+}
+
+
+#btn-add{
+  border-radius: 50%;
+  padding: 4px 8px;
+  font-size: 10px;
+  color: black;
+}
+
+.btn-outline-light{
+  font-weight: bold;
+}
+
+.login-popover {
+  width: 300px;
+}

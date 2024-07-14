@@ -1,0 +1,94 @@
+.bigDiv {
+  margin: 0 0 0 20px;
+  padding: 0px;
+}
+
+.bigDiv h1{
+  margin: 20px;
+}
+
+.mainContainer{
+  flex-direction: row;
+  padding: 0;
+  margin: 0;
+}
+
+.mainContainer button{
+  display: inline-block;
+}
+
+.container {
+  display: flex;
+  padding: 0;
+  margin-left: 20px;
+  margin-right: 0;
+  margin-bottom: 40px;
+}
+
+.workContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+.workContainer img{
+  max-width: 300px;
+  border-radius: 5px;
+}
+
+.workContainer .btn {
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  content: '';
+}
+
+.workContainer input{
+  display: none;
+}
+
+.workContainer label{
+  cursor: pointer;
+}
+
+
+.meContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 20px;
+}
+
+.meContainer button{
+  display: inline-block;
+}
+
+/**/
+
+.textArea {
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+  justify-content: center;
+}
+
+.textArea textarea{
+  width: 760px;
+  height: 150px;
+  background-color: transparent;
+  text-align: left;
+  border: 1px ;
+  border-radius: 5px;
+  resize: none;
+
+}
+
+.agregarLink {
+  display: block;
+  text-align: center;
+  margin: 0 50%;
+}
+
+

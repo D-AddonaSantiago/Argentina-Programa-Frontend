@@ -1,0 +1,52 @@
+<div class="project-list">
+  <h1>Proyectos Personales</h1>
+
+  <div class="project-item" *ngFor="let project of proyList">
+    <div class="ifTrue" *ngIf="editingElem !== project.id">
+      <div class="project-info">
+        <h2>{{ project.titulo }}</h2>
+        <p>{{ project.descripcion }}</p>
+        <div class="project-images">
+          <img class="img-thumbnail" *ngIf="project.img && project.img.length > 3" src="{{ project.img }}" alt="ProyImg">
+          <img class="img-thumbnail" *ngIf="project.img2 && project.img2.length > 3" src="{{ project.img2 }}" alt="ProyImg2">
+          <img class="img-thumbnail" *ngIf="project.img3 && project.img3.length > 3" src="{{ project.img3 }}" alt="ProyImg3">
+        </div>
+      </div>
+      <button class="btn btn-primary" (click)="editingElem = project.id ?? -1; tempProy = project" *ngIf="isLogged">Editar</button>
+      <button class="btn btn-danger" (click)="eliminarProyecto(project)" *ngIf="isLogged">Eliminar</button>
+    </div>
+
+    <div class="ifFalse" *ngIf="editingElem === project.id">
+      <div class="project-info">
+        <input class="titulo" type="text" [(ngModel)]="tempProy.titulo">
+        <textarea class="descripcion" [(ngModel)]="tempProy.descripcion"></textarea>
+        <div class="project-images">
+          <div class="image-item" *ngIf="project.img && tempProy.img.length > 3">
+            <img class="img-thumbnail" src="{{ tempProy.img }}" alt="ProyImg">
+            <input type="text" [(ngModel)]="tempProy.img">
+            <button class="btn btn-danger" (click)="deleteImage(tempProy)">Eliminar</button>
+          </div>
+          <div class="image-item" *ngIf="project.img2 && tempProy.img2.length > 3">
+            <img class="img-thumbnail" src="{{ tempProy.img2 }}" alt="ProyImg2">
+            <input type="text" [(ngModel)]="tempProy.img2">
+            <button class="btn btn-danger" (click)="deleteImage2(tempProy)">Eliminar</button>
+          </div>
+          <div class="image-item" *ngIf="project.img3 && tempProy.img3.length > 3">
+            <img class="img-thumbnail" src="{{ tempProy.img3 }}" alt="ProyImg3">
+            <input type="text" [(ngModel)]="tempProy.img3">
+            <button class="btn btn-danger" (click)="deleteImage3(tempProy)">Eliminar</button>
+          </div>
+        </div>
+        <button class="btn btn-primary" *ngIf="tempProy.img.length <= 3" (click)="addImage1(tempProy)">Agregar Imagen 1</button>
+        <button class="btn btn-primary" *ngIf="tempProy.img2.length <= 3" (click)="addImage2(tempProy)">Agregar Imagen 2</button>
+        <button class="btn btn-primary" *ngIf="tempProy.img3.length <= 3" (click)="addImage3(tempProy)">Agregar Imagen 3</button>
+
+      </div>
+      <button class="btn btn-primary" (click)="editProject(tempProy); editingElem = -1">Guardar</button>
+      <button class="btn btn-secondary" (click)="editingElem = -1">Cancelar</button>
+    </div>
+  </div>
+
+  <button class="btn btn-success" (click)="agregarProyecto()" *ngIf="isLogged">Agregar Nuevo Proyecto</button>
+
+</div>
