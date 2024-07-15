@@ -1,6 +1,6 @@
 export const environment = {
   firebase: {
-    projectId: 'sdfrontend',
+    projectId: 'santiagodaddona.web.app',
     appId: '1:580180299058:web:ff6ebf7271ed88bc5c9b2b',
     storageBucket: 'sdfrontend.appspot.com',
     locationId: 'southamerica-east1',
